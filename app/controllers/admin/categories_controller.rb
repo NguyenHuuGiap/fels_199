@@ -12,6 +12,11 @@ class Admin::CategoriesController < AdminController
     @category = Category.new
   end
 
+  def show
+    @question = @category.questions.paginate page: params[:page],
+      per_page: Settings.per_page
+  end
+
   def create
     @category = Category.new category_params
     if @category.save

@@ -37,4 +37,12 @@ module ApplicationHelper
       image_tag "logo.png", class: class_image
     end
   end
+
+  def status suggest
+    if suggest.status?
+      t "status.success"
+    else
+      t "status.warning"
+    end
+  end
 end
