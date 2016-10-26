@@ -10,7 +10,7 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
+        <td><%= link_to category.name, admin_category_path(category.id) %></td>
         <td class = "last-column">
           <span class="pull">
             <%= link_to edit_admin_category_path(category),

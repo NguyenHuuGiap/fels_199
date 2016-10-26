@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :suggest_questions
   namespace :admin do
     root "home#index", as: "root"
+    resources :suggest_questions
     resources :categories
     resources :questions
     resources :answers

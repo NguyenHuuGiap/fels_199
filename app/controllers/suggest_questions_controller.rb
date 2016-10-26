@@ -4,7 +4,7 @@ class SuggestQuestionsController < ApplicationController
   before_action :load_category, only: [:new, :create, :edit]
 
   def index
-    @suggests = SuggestQuestion.recent.paginate page: params[:page],
+    @suggests = current_user.suggest_questions.recent.paginate page: params[:page],
       per_page: Settings.per_page
   end
 

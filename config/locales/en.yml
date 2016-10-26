@@ -113,6 +113,7 @@ en:
     destroy_success: "Destroy Success"
     destroy_danger: "Destroy Not Success"
   question_admin:
+    subject_quanlity_error: "At least 2 answer and least 1 answer correct"
     question: "Question"
     edit_question: "Edit Question"
     question_content: "Question Content"
@@ -136,6 +137,7 @@ en:
     destroy_success: "Destroy Success"
     destroy_danger: "Destroy Not Success"
   suggest_user:
+    subject_quanlity_error: "At least 2 answer and least 1 answer correct"
     question: "Question"
     edit_suggest: "Edit Suggest"
     question_content: "Question Content"
@@ -158,6 +160,10 @@ en:
     create_danger: "Create Not Success"
     destroy_success: "Destroy Success"
     destroy_danger: "Destroy Not Success"
+    status: "Status"
+    approved: "Approved"
+    approvel: "Approvel"
+    pending: "Pending"
   function:
     edit: "Edit"
     update: "Update"

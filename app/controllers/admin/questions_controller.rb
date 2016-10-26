@@ -10,6 +10,7 @@ class Admin::QuestionsController < AdminController
   end
 
   def new
+    @suggest = SuggestQuestion.find_by id: params[:id]
     @question = Question.new
     @question.answers.build
   end
@@ -62,5 +63,4 @@ class Admin::QuestionsController < AdminController
     def load_categories
       @category = Category.all
     end
-
 end
