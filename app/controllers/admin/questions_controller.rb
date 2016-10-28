@@ -17,10 +17,15 @@ class Admin::QuestionsController < AdminController
 
   def create
     @question = Question.new question_params
-    if @question.save
-      flash[:success] = t "question_admin.create_success"
-      redirect_to admin_questions_path
+    if @question.validate_answers?
+      if @question.save
+        flash[:success] = t "question_admin.create_success"
+        redirect_to admin_questions_path
+      else
+        render :new
+      end
     else
+      flash[:danger] = t "asssss"
       render :new
     end
   end

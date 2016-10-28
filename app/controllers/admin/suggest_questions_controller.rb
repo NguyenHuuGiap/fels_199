@@ -16,18 +16,13 @@ class Admin::SuggestQuestionsController < AdminController
     @question = Question.new(content: @suggest.content,
       pattern: @suggest.pattern, category_id: @suggest.category_id)
     @suggest.update_attributes(status: true)
-    if @question.save
+    @question.save
       @suggest.suggest_answers.each do |f|
         @answer = Answer.new(question_id: @question.id, content: f.content,
           is_correct: f.is_correct)
+        @answer.save
       end
-      if @answer.save
-        flash[:success] = t "question_admin.create_success"
-        redirect_to admin_suggest_questions_path
-      end
-    else
       redirect_to admin_suggest_questions_path
-    end
   end
 
   def destroy

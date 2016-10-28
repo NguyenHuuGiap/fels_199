@@ -7,7 +7,7 @@ class SuggestQuestion < ApplicationRecord
   validates :user, presence: true
   validates :category, presence: true
   validates :content, presence: true, length: {minimum: 5}
-  validate :validate_suggest_answers
+  validate :validate_suggest_answers, on: [:create]
 
   accepts_nested_attributes_for :suggest_answers, allow_destroy: true
 
