@@ -10,7 +10,15 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr id="question_<%= question.id%>">
-        <td><%= question.content %></td>
+        <td>
+          <%= question.content %>
+          <%= link_to "ADD", "#", :onclick =>'function note()' %>
+          <ul id="notice">
+            <% question.answers.each do |answer| %>
+              <%= render "answer", f: answer %>
+            <%end%>
+          </ul>
+        </td>
         <td class = "last-column">
           <span class="pull">
             <%= link_to edit_admin_question_path(question),
